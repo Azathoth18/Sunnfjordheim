@@ -10,13 +10,13 @@ New enemies mod created to be used on the **SUNNFJORDHEIM** server.
 ## Technical Information & Usage
 
 <details>
-This mod is designed to be cloned using MonsterDB. While it can function as a standalone, please keep the following points in mind:
-Armor Rendering: Armors that add an ArmorMat (such as the Troll Set) will not render correctly without MonsterDB, as the material isn't properly copied to the mob model. Using MonsterDB fixes this issue.
-F1 Menu Integration: If a cloned mob's prefab name starts with RZ_, you can configure it directly via the F1 Creatures menu.
-Slot Conflict Warning: Avoid adding items to the same slots in both the F1 menu (CreaturesOrigins) and MonsterDB. For example, if you equip ArmorLegs in both places for the same mob, it may cause glitches or unpredictable behavior.
-Damage & Stats: A mob's power and damage output are inherited directly from its equipped items.
-Gender System: If the mob's name ends with F (Female) or M (Male), the CreaturesOrigins system for custom colors, hair, and beards will be automatically applied.
-Spawning: These creatures do not spawn naturally in the world. You must spawn them manually.
+-This mod is designed to be cloned using MonsterDB. While it can function as a standalone, please keep the following points in mind:
+-Armor Rendering: Armors that add an ArmorMat (such as the Troll Set) will not render correctly without MonsterDB, as the material isn't properly copied to the mob model. Using MonsterDB fixes this issue.
+-F1 Menu Integration: If a cloned mob's prefab name starts with RZ_, you can configure it directly via the F1 Creatures menu.
+-Slot Conflict Warning: Avoid adding items to the same slots in both the F1 menu (CreaturesOrigins) and MonsterDB. For example, if you equip ArmorLegs in both places for the same mob, it may cause glitches or unpredictable behavior.
+-Damage & Stats: A mob's power and damage output are inherited directly from its equipped items.
+-Gender System: If the mob's name ends with F (Female) or M (Male), the CreaturesOrigins system for custom colors, hair, and beards will be automatically applied.
+-Spawning: These creatures do not spawn naturally in the world. You must spawn them manually.
 
 </details>
 
@@ -93,11 +93,11 @@ Spawning: These creatures do not spawn naturally in the world. You must spawn th
 
 <details>
 <summary><strong>1.0.1</strong></summary>
-* Added new enemy mobs to the roster
-* Integrated custom hair and beard systems
-* Improved control over creature elements and settings
+- Added new enemy mobs to the roster
+- Integrated custom hair and beard systems
+- Improved control over creature elements and settings
 <summary><strong>1.0.0</strong></summary>
-* Initial release
+- Initial release
 </details>
 
 ---
