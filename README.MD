@@ -1,58 +1,119 @@
-# JötunnModStub
+# Creatures of Origins
 
-A Valheim mod stub project using [Jötunn](https://github.com/Valheim-Modding/Jotunn) including build tools and a basic Unity project stub.
-There is no actual plugin content included, just a minimum plugin class. 
+New enemies mod created to be used on the **SUNNFJORDHEIM** server.
 
-#  Setup Guide
+[![Discord](https://i.imgur.com/uE6umQE.png)](https://discord.gg/vMRwKGm5r7) Personal Discord – updates and development news
+[![Discord](https://i.imgur.com/uE6umQE.png)](https://discord.gg/qNvuzeFR7n) **SUNNFJORDHEIM** Community Server
 
-Please see [Jötunn Docs](https://valheim-modding.github.io/Jotunn/guides/overview.html) detailed documentation and setup.
+---
 
-### Post Build automations
+## Technical Information & Usage
 
-Included in this repo is a PowerShell script `publish.ps1`.
-The script is referenced in the project file as a post-build event.
-Depending on the chosen configuration in Visual Studio the script executes the following actions.
+<details>
+This mod is designed to be cloned using MonsterDB. While it can function as a standalone, please keep the following points in mind:
+Armor Rendering: Armors that add an ArmorMat (such as the Troll Set) will not render correctly without MonsterDB, as the material isn't properly copied to the mob model. Using MonsterDB fixes this issue.
+F1 Menu Integration: If a cloned mob's prefab name starts with RZ_, you can configure it directly via the F1 Creatures menu.
+Slot Conflict Warning: Avoid adding items to the same slots in both the F1 menu (CreaturesOrigins) and MonsterDB. For example, if you equip ArmorLegs in both places for the same mob, it may cause glitches or unpredictable behavior.
+Damage & Stats: A mob's power and damage output are inherited directly from its equipped items.
+Gender System: If the mob's name ends with F (Female) or M (Male), the CreaturesOrigins system for custom colors, hair, and beards will be automatically applied.
+Spawning: These creatures do not spawn naturally in the world. You must spawn them manually.
 
-### Building Debug
+</details>
 
-The compiled dll and a dll.mdb debug file are copied to `<ValheimDir>\BepInEx\plugins` (or the path set in MOD_DEPLOYPATH).
+---
 
-### Building Release
+## Prefab List Reference
 
-A compressed file with the binaries is created in `<JotunnModStub>\Packages`ready for upload to ThunderStore.
-Dont forget to include your information in the manifest.json and to change the project's readme file.
+<details>
+<summary><strong>Prefab List Reference</strong></summary>
 
-## Developing Assets with Unity
+| Category    | Male Prefab       | Female Prefab     |
+| ----------- | ----------------- | ----------------- |
+| Undead      | RZ_NOMUERTOM      | RZ_NOMUERTOF      |
+| Black Orcs  | RZ_ORCONEGROM     | RZ_ORCONEGROF     |
+| Green Orcs  | RZ_ORCOVERDEM     | RZ_ORCOVERDEF     |
+| Vile Orcs   | RZ_ORCOVIL        | —                 |
+| High Elves  | RZ_ELFOM          | RZ_ELFOF          |
+| Night Elves | RZ_ELFODELANOCHEM | RZ_ELFODELANOCHEF |
+| Draeneis    | RZ_DRAENEIM       | RZ_DRAENEIF       |
+| Niflborns   | RZ_NiflbornM      | RZ_NiflbornF      |
+| Jotuns      | RZ_JotunM         | RZ_JotunF         |
+| Muspelheim  | RZ_MuspelheimM    | RZ_MuspelheimF    |
+| Tiefling    | RZ_TielfingM      | RZ_TielfingF      |
+| Myrmidons   | RZ_Mirmidon       | RZ_MirmidonF      |
+| Trolls      | RZ_TrollM         | RZ_TrollF         |
+| Dwarves     | RZ_ENANO          | —                 |
 
-New Assets can be created with Unity and imported into Valheim using the mod.
-A Unity project is included in this repository under `<JotunnModStub>\JotunnModUnity`.
+</details>
 
-### Unity Editor Setup
+---
 
-1. [Download](https://public-cdn.cloud.unity3d.com/hub/prod/UnityHubSetup.exe) UnityHub directly from Unity or install it with the Visual Studio Installer via `Individual Components` -> `Visual Studio Tools for Unity`
-2. You will need an Unity account to register your PC and get a free licence. Create the account, login with it in Unity Hub and get your licence via `Settings` -> `Licence Management`
-3. Install Unity Editor version 2022.3.17f
-4. Compile the project. This copies all assemblies into `<JotunnModStub>\JotunnModUnity\Assets\Assemblies`. Don't open Unity yet before this step, it will remove assembly references.
-5. **Warning:** These assembly files are copyrighted material and you can theoretically get into trouble when you distribute them in your github repository. To avoid that there is a .gitignore file in the Unity project folder. Keep that when you clone or copy this repository
-6. Open Unity Hub and add the JotunnModUnity project
-7. Open the project in Unity
-8. Install the `AssetBundle Browser` package in the Unity Editor via `Window`-> `Package Manager` for easy bundle creation
+## HairColorIndex Reference
 
-## Debugging
+<details>
+<summary><strong>HairColorIndex Reference</strong></summary>
 
-See the Wiki page [Debugging Plugins via IDE](https://github.com/Valheim-Modding/Wiki/wiki/Debugging-Plugins-via-IDE) for more information
+| Index | Color Description             | Index | Color Description    |
+| ----: | ----------------------------- | ----: | -------------------- |
+|     0 | Black                         |    15 | Dark Bluish Gray     |
+|     1 | Very Light Blonde / Pale Gold |    16 | Deep Dark Green      |
+|     2 | Light Brown / Honey           |    17 | Magenta              |
+|     3 | Very Dark Brown / Near Black  |    18 | Cyan                 |
+|     4 | Dull Medium Brown             |    19 | Lime                 |
+|     5 | Light Ash Brown               |    20 | Purple               |
+|     6 | Bright Golden Blonde          |    21 | Neon Orange          |
+|     7 | Dark Blonde / Wheat           |    22 | Electric Blue        |
+|     8 | Ash Blonde / Beige            |    23 | Neon Red             |
+|     9 | Auburn / Reddish Brown        |    24 | Pure White           |
+|    10 | Dark Red / Mahogany           |    25 | Ice Bluish White     |
+|    11 | Copper / Fire Red             |    26 | Glacier Light Blue   |
+|    12 | Dark Gray                     |    27 | Intense Glacier Blue |
+|    13 | Medium Gray / Grizzled        |    28 | Cold Grayish Blue    |
+|    14 | Cold White / Snow             |    29 | Cold White / Snow    |
 
-## Actions after a game update
+</details>
 
-When Valheim updates it is likely that parts of the assembly files change.
-If this is the case, the references to the assembly files must be renewed in Visual Studio and Unity.
+---
 
-### Prebuild actions
+## Roadmap & Planned Features
+<details>
+<summary><strong>Roadmap & Planned Features</strong></summary>
 
-1. There is a file called DoPrebuild.props included in the solution. When you set its only value to true, Jötunn will automatically generate publicized assemblies for you. Otherwise you have to do this step manually.
+* **Custom Cloning System**: Investigation into a built-in cloning system native to the mod.
+* **New Creatures**: Expansion of the roster with even more unique mobs.
+* **Enhanced Audio & FX**: Improved sound effects and custom creature voices.
+* **New Loot Tables**: Unique drops and items per creature type.
+* **Custom Animations**: New movement and attack animations.
+* **Underwater Combat**: Enabling Myrmidons to fight effectively underwater (compatible with diving mods).
+</details>
 
-### Unity actions
+---
 
-1. Copy all `assembly_*.dll` from `<ValheimDir>\valheim_Data\Managed` into `<JotunnModStub>\JotunnModUnity\Assets\Assemblies`. <br />
-  **Do this directly in the filesystem - don't import the dlls in Unity**.
-2. Go to Unity Editor and press `Ctrl+R`. This reloads all files from the filesystem and "re-imports" the copied dlls into the project.
+## Changelog
+
+<details>
+<summary><strong>1.0.1</strong></summary>
+* Added new enemy mobs to the roster
+* Integrated custom hair and beard systems
+* Improved control over creature elements and settings
+<summary><strong>1.0.0</strong></summary>
+* Initial release
+</details>
+
+---
+
+## Special Thanks & Acknowledgments
+
+<details>
+<summary><strong>Special Thanks & Acknowledgments</strong></summary>
+
+* **Rusty** – Guidance on mob configuration, hair systems, and attack patterns
+* **cookiexmilk** – Teaching me how to create mobs and answering countless questions
+* **Ulvar Hræfr** – Constant feedback and testing to optimize the mod
+* **MidnightsFX** – Teaching many of the implementations used today
+* **Shawesome** – Race system knowledge and constant support; this mod exists thanks to your teachings
+* **Davidmandalorian** – Advice, opinions, and continued support
+* **Valheim Modding & OdinPlus** – For always answering community questions with patience
+* **Sunnfjordheim Community** – Thank you for providing the space to test ideas and for the constant support
+
+</details>
